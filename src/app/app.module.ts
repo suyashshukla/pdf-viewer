@@ -13,12 +13,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     PdfViewerModule,
     RouterModule.forRoot([
-      { path: '', redirectTo: 'view', pathMatch: 'full' },
-      { path: 'view', component: AppComponent }
-    ],
-      {
-        useHash: true
-      })
+      { path: '', component: AppComponent },
+    ])
   ],
   exports: [
     RouterModule
