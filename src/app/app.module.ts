@@ -15,7 +15,10 @@ import { AppComponent } from './app.component';
     RouterModule.forRoot([
       { path: '', redirectTo: 'view', pathMatch: 'full' },
       { path: 'view', component: AppComponent }
-    ])
+    ],
+      {
+        useHash: true
+      })
   ],
   exports: [
     RouterModule
