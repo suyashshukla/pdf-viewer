@@ -11,25 +11,25 @@ export class AppComponent implements OnInit {
   password!: string;
 
   src!: any;
-  
+
   constructor(
     private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
 
-    this.route.queryParams.subscribe(params=>{
+    this.route.queryParams.subscribe(params => {
       this.url = params['url'];
       this.password = params['password'];
-  
+
       if (this.isParamsValid && this.password) {
         this.src = {
-          url: this.url,
+          url: atob(this.url),
           password: this.password
         };
       }
-      else {
-        this.src = this.url;
+      else if (this.isParamsValid) {
+        this.src = atob(decodeURI(this.url));
       }
     });
   }
