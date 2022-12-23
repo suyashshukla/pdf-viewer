@@ -1,29 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
-body{
+body {
     overflow-x: hidden;
 }
 
-.h-100vh{
+.h-100vh {
     height: 100vh;
+}
+
+.pdf-container {
+    height: 700px;
+    width: 500px;
+    background-color: #323344;
+    border-radius: 5px;
+    overflow-y: hidden;
 }
 
 /* width */
 ::-webkit-scrollbar {
     width: 2.5px;
     height: 2.5px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
+
+/* Track */
+::-webkit-scrollbar-track {
     background: lightgray;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
     background: #323344;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
     background: darkgray;
-  }
+}
+
+.ng2-pdf-viewer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0px;
+}
