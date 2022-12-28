@@ -6,6 +6,9 @@
         class="pdf-container shadow shadow-lg">
       </pdf-viewer>
     </div>
+    <div class="position-absolute bottom-0 mb-3">
+      <button class="btn btn-secondary" (click)="downloadFile()">Download</button>
+    </div>
   </ng-container>
   <ng-container *ngIf="!isParamsValid">
     <div class="bg-dark p-3 border-rounded d-flex align-items-center justify-content-center"
