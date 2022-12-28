@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -23,25 +23,27 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    let params = this.route.snapshot.queryParams;
-    this.url = params['url'];
-    this.password = params['password'];
-    this.fileName = params['fileName'];
 
-    if (this.isParamsValid && this.password) {
-      this.downloadUrl = atob(decodeURI(this.url));
-      this.src = {
-        url: this.downloadUrl,
-        password: this.password
-      };
-    }
-    else if (this.isParamsValid) {
-      this.src = this.downloadUrl;
-    }
+    this.route.queryParams.subscribe(params => {
+      this.url = params['url'];
+      this.password = params['password'];
+      this.fileName = params['fileName'];
+
+      if (this.isParamsValid && this.password) {
+        this.downloadUrl = atob(decodeURI(this.url));
+        this.src = {
+          url: this.downloadUrl,
+          password: this.password
+        };
+      }
+      else if (this.isParamsValid) {
+        this.src = this.downloadUrl;
+      }
+    });
   }
 
   downloadFile() {
-    this.httpClient.get(`${this.downloadUrl}`, { observe: 'response', responseType: 'blob', params: new HttpParams() }).subscribe(response => {
+    this.httpClient.get(`${this.downloadUrl}`, { observe: 'response', responseType: 'blob' }).subscribe(response => {
       const blob = new Blob([response.body as BlobPart], { type: 'application/octet-stream' });
       const fileName = this.fileName || 'document.pdf';
       saveAs(blob, fileName);

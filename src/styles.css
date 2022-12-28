@@ -16,6 +16,27 @@ body {
     overflow-y: hidden;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 2.5px;
+    height: 2.5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: lightgray;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #323344;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: darkgray;
+}
+
 .ng2-pdf-viewer-container {
     display: flex;
     align-items: center;
