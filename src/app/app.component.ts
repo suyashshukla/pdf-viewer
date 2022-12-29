@@ -52,17 +52,6 @@ export class AppComponent implements OnInit {
     });
   }
 
-  getFileName(headers: HttpHeaders) {
-    const contentDisposition = decodeURIComponent(headers.get('content-disposition') || '') || '';   // decodes the encoded characters in file name
-    let matches = /filename="([^;]+)"/ig.exec(contentDisposition);
-    if (matches == null) {
-      matches = /filename=([^;]+)/ig.exec(contentDisposition);
-    }
-
-    const fileName = ((matches || [])[1] || 'untitled').trim();
-    return fileName;
-  };
-
   get isParamsValid() {
     return this.url != null;
   }
