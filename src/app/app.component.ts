@@ -29,15 +29,17 @@ export class AppComponent implements OnInit {
       this.password = params['password'];
       this.fileName = params['fileName'];
 
-      if (this.isParamsValid && this.password) {
+      if (this.isParamsValid) {
         this.downloadUrl = atob(decodeURI(this.url));
-        this.src = {
-          url: this.downloadUrl,
-          password: this.password
-        };
-      }
-      else if (this.isParamsValid) {
-        this.src = this.downloadUrl;
+        if (this.password) {
+          this.src = {
+            url: this.downloadUrl,
+            password: this.password
+          };
+        }
+        else if (this.isParamsValid) {
+          this.src = this.downloadUrl;
+        }
       }
     });
   }
