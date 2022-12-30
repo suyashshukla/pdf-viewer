@@ -1,17 +1,17 @@
 <div class="w-100 h-100vh d-flex align-items-center justify-content-center">
   <ng-container *ngIf="isParamsValid">
-    <div class="position-relative h-100">
-      <div class="bg-dark p-3 border-rounded d-flex align-items-center justify-content-center overflow-auto"
+    <div class="position-relative h-100 w-100">
+      <div class="p-3 border-rounded d-flex align-items-center justify-content-center overflow-auto"
         style="width: 100%; height: 100%;">
         <pdf-viewer [src]="src" [show-all]="true" [original-size]="false" [zoom]="0.75"
           class="pdf-container shadow shadow-lg">
         </pdf-viewer>
       </div>
-      <div class="position-absolute bottom-0 w-100">
-        <button class="btn btn-primary w-100" (click)="downloadFile()">Download</button>
+      <div class="floating-icon">
+        <span class="ki ki-download" (click)="downloadFile()"></span>
       </div>
     </div>
-  </ng-container>
+  </ng-container> 
   <ng-container *ngIf="!isParamsValid">
     <div class="bg-dark p-3 border-rounded d-flex align-items-center justify-content-center"
       style="width: 100%; height: 100%;">

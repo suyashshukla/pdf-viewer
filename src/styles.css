@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     overflow-x: hidden;
-    background-color: black;
+    background-color: #f8f8f9;
 }
 
 .h-100vh {
@@ -42,3 +42,22 @@ body {
     justify-content: center;
     margin: 20px 0px;
 }
+
+/* Floating Icons Styles */
+.floating-icon {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 50%;
+    background-color: #a2a9b4;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.floating-icon .ki-download::before {
+    font-size: 45px;
+}
+
