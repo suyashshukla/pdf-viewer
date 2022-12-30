@@ -1,6 +1,6 @@
 <div class="w-100 h-100vh">
   <ng-container *ngIf="isParamsValid">
-    <div class="position-relative h-100 w-100">
+    <div class="position-relative h-100 w-100 overflow-auto">
       <div class="">
         <pdf-viewer [src]="src" [show-all]="true" [original-size]="false" [zoom]="0.9"
           class="pdf-container shadow shadow-lg">
