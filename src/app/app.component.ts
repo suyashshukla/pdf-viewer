@@ -26,10 +26,13 @@ export class AppComponent implements OnInit {
 
     this.route.queryParams.subscribe(params => {
       this.url = params['url'];
+      this.url = "https://stpdfviewercus.blob.core.windows.net/private/Experian-CreditReport-CRVD-478548140-1670054323900.pdf";
       this.password = params['password'];
       this.fileName = params['fileName'];
+      this.downloadUrl = this.url;
+      this.src = this.url;
 
-      if (this.isParamsValid) {
+      if (this.isParamsValid && false) {
         this.downloadUrl = atob(decodeURI(this.url));
         if (this.password) {
           this.src = {

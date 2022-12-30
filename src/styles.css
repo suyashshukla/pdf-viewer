@@ -37,9 +37,6 @@ body {
 }
 
 .ng2-pdf-viewer-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin: 20px 0px;
 }
 
@@ -49,15 +46,19 @@ body {
     bottom: 30px;
     right: 30px;
     border-radius: 50%;
-    background-color: #a2a9b4;
-    height: 80px;
-    width: 80px;
+    background-color:rgba(93,158,211,.2);
+    height: 60px;
+    width: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .floating-icon .ki-download::before {
-    font-size: 45px;
+    color: #5d9ed3;
+    font-size: 40px;
 }
 
+.page {
+    box-shadow: 0px 0px 10px #d8d8d8;
+}

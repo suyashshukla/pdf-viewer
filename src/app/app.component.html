@@ -1,8 +1,7 @@
-<div class="w-100 h-100vh d-flex align-items-center justify-content-center">
+<div class="w-100 h-100vh">
   <ng-container *ngIf="isParamsValid">
     <div class="position-relative h-100 w-100">
-      <div class="p-3 border-rounded d-flex align-items-center justify-content-center overflow-auto"
-        style="width: 100%; height: 100%;">
+      <div class="">
         <pdf-viewer [src]="src" [show-all]="true" [original-size]="false" [zoom]="0.75"
           class="pdf-container shadow shadow-lg">
         </pdf-viewer>
