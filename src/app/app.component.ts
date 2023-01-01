@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
             password: this.password
           };
         }
-        else if (this.isParamsValid) {
+        else {
           this.src = this.downloadUrl;
         }
       }
