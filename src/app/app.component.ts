@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
         if (this.password) {
           this.src = {
             url: this.downloadUrl,
-            password: this.password
+            password: this.password.toUpperCase()
           };
         }
         else if (this.isParamsValid) {
